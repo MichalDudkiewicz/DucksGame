@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 27190eded960efd4294cd1cac9924860
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - breadPrefab: {fileID: 3361943138424686402, guid: 3c9647f26df14d147ad0fca50281c7b7, type: 3}
+  - grainPrefab: {fileID: 4758305261376999530, guid: 77c402e448e735d4db101d5cf6b17c45, type: 3}
+  - duckPrefab: {fileID: 4188939487270241270, guid: fbf5342ebe97d894c94afac59001400b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
