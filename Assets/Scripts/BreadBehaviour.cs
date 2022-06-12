@@ -39,6 +39,8 @@ public class BreadBehaviour : MonoBehaviour
             duck.hunger += 5;
 
             GameManager.Instance.points -= 10;
+
+            Vibrator.Vibrate();
         }
     }
 }
