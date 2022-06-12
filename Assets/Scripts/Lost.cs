@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Lost : MonoBehaviour
 {
     public Text level;
+    public Text score;
 
     public bool isEnabled = false;
 

@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         Debug.Log(currentLevel);
         lostUI.GetComponent<Lost>().level.text = "Lvl. " + currentLevel.ToString();
+        lostUI.GetComponent<Lost>().score.text = points.ToString();
         lostUI.SetActive(true);
         lostUI.GetComponent<Lost>().isEnabled = true;
     }
@@ -133,6 +134,7 @@ public class GameManager : MonoBehaviour
         HideUI();
         Time.timeScale = 0f;
         wonUI.GetComponent<Won>().level.text = "Lvl. " + currentLevel.ToString();
+        wonUI.GetComponent<Won>().score.text = points.ToString();
         wonUI.SetActive(true);
         wonUI.GetComponent<Won>().isEnabled = true;
     }
