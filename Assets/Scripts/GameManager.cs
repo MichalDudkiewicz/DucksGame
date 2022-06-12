@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject ui;
     public GameObject breadPrefab;
     public GameObject grainPrefab;
     public GameObject maleDuckPrefab;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ShowUI();
         currentLevel = PlayerPrefs.GetInt("currentLevel");
         levelText.text = currentLevel.ToString();
         GameEvents.current.onDuckDeath += handleDuckDeath;
@@ -64,8 +66,6 @@ public class GameManager : MonoBehaviour
 
         wonUI.SetActive(false);
         lostUI.SetActive(false);
-        wonUI.GetComponent<Won>().isEnabled = false;
-        lostUI.GetComponent<Lost>().isEnabled = false;
     }
 
     private void handleDuckDeath(DuckBehaviour duck)
@@ -126,7 +126,6 @@ public class GameManager : MonoBehaviour
         lostUI.GetComponent<Lost>().level.text = "Lvl. " + currentLevel.ToString();
         lostUI.GetComponent<Lost>().score.text = points.ToString();
         lostUI.SetActive(true);
-        lostUI.GetComponent<Lost>().isEnabled = true;
     }
 
     private void Won()
@@ -136,18 +135,16 @@ public class GameManager : MonoBehaviour
         wonUI.GetComponent<Won>().level.text = "Lvl. " + currentLevel.ToString();
         wonUI.GetComponent<Won>().score.text = points.ToString();
         wonUI.SetActive(true);
-        wonUI.GetComponent<Won>().isEnabled = true;
+        PlayerPrefs.SetInt("level" + (GameManager.Instance.currentLevel + 1).ToString(), 1);
     }
 
     private void HideUI()
     {
-        GameObject ui = GameObject.Find("UI");
         ui.SetActive(false);
     }
 
     public void ShowUI()
     {
-        GameObject ui = GameObject.Find("UI");
         ui.SetActive(true);
     }
 }

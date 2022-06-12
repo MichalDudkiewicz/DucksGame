@@ -9,16 +9,18 @@ public class Won : MonoBehaviour
     public Text level;
     public Text score;
 
-    public bool isEnabled = false;
-
-    // Update is called once per frame
-    void Update()
+    public void Continue()
     {
-        if (isEnabled && Input.touchCount > 0)
-        {
-            PlayerPrefs.SetInt("level" + (GameManager.Instance.currentLevel+1).ToString(), 1);
-            SceneManager.LoadScene("Main Menu");
-            Time.timeScale = 1f;
-        }
+        PlayerPrefs.SetInt("currentLevel", GameManager.Instance.currentLevel + 1);
+        GameManager.Instance.ShowUI();
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
+    }
+
+    public void TryAgain()
+    {
+        GameManager.Instance.ShowUI();
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
     }
 }
