@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Lost : MonoBehaviour
 {
+    public Text level;
+
     public bool isEnabled = false;
 
     // Update is called once per frame

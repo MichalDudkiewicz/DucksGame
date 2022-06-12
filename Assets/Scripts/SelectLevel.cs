@@ -46,7 +46,7 @@ public class SelectLevel : MonoBehaviour
     void ButtonClicked(int buttonNo)
     {
         PlayerPrefs.SetInt("currentLevel", buttonNo);
-
+        GameManager.Instance.ShowUI();
         SceneManager.LoadScene("SampleScene");
     }
 }

@@ -120,15 +120,32 @@ public class GameManager : MonoBehaviour
 
     private void Lost()
     {
+        HideUI();
         Time.timeScale = 0f;
+        Debug.Log(currentLevel);
+        lostUI.GetComponent<Lost>().level.text = "Lvl. " + currentLevel.ToString();
         lostUI.SetActive(true);
         lostUI.GetComponent<Lost>().isEnabled = true;
     }
 
     private void Won()
     {
+        HideUI();
         Time.timeScale = 0f;
+        wonUI.GetComponent<Won>().level.text = "Lvl. " + currentLevel.ToString();
         wonUI.SetActive(true);
         wonUI.GetComponent<Won>().isEnabled = true;
+    }
+
+    private void HideUI()
+    {
+        GameObject ui = GameObject.Find("UI");
+        ui.SetActive(false);
+    }
+
+    public void ShowUI()
+    {
+        GameObject ui = GameObject.Find("UI");
+        ui.SetActive(true);
     }
 }
