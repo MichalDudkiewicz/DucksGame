@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public int points = 0;
     public Text pointsText;
+    public Text levelText;
 
     public GameObject wonUI;
     public GameObject lostUI;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentLevel = PlayerPrefs.GetInt("currentLevel");
-        Debug.Log(currentLevel);
+        levelText.text = currentLevel.ToString();
         GameEvents.current.onDuckDeath += handleDuckDeath;
 
         var random = new System.Random();
