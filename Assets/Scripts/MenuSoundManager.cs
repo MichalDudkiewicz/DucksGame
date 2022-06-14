@@ -8,6 +8,7 @@ public class MenuSoundManager : MonoBehaviour
 	// Audio players components.
 	public AudioSource EffectsSource;
 	public AudioSource MusicSource;
+	public AudioSource SecondaryTrackSource;
 	private bool muted = false;
 
 	// Random pitch adjustment range.
@@ -96,15 +97,6 @@ public class MenuSoundManager : MonoBehaviour
 		}
 	}
 
-	public void PlaySwim()
-	{
-		if (!muted)
-		{
-			EffectsSource.clip = swimClip;
-			EffectsSource.Play();
-		}
-	}
-
 	// Play a random clip from an array, and randomize the pitch slightly.
 	public void RandomSoundEffect(params AudioClip[] clips)
 	{
@@ -119,24 +111,30 @@ public class MenuSoundManager : MonoBehaviour
     {
 		MusicSource.clip = backgroundClip;
 		MusicSource.Play();
+		SecondaryTrackSource.Stop();
 	}
 
 	public void GameMusic()
 	{
 		MusicSource.clip = gameMusicClip;
 		MusicSource.Play();
+		SecondaryTrackSource.clip = swimClip;
+		SecondaryTrackSource.Play();
 	}
 
 	public void Mute()
     {
 		muted = true;
 		MusicSource.mute = true;
-    }
+		SecondaryTrackSource.mute = true;
+
+	}
 
 	public void Unmute()
 	{
 		muted = false;
 		MusicSource.mute = false;
+		SecondaryTrackSource.mute = false;
 	}
 
 }
