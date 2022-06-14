@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MenuSoundManager.Instance.GameMusic();
         ShowUI();
         currentLevel = PlayerPrefs.GetInt("currentLevel");
         levelText.text = currentLevel.ToString();
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     private void handleDuckDeath(DuckBehaviour duck)
     {
+        MenuSoundManager.Instance.PlayDeath();
         ducks.Remove(duck);
         for (int i = 0; i < ducks.Count; i ++)
         {

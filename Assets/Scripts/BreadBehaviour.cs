@@ -41,6 +41,7 @@ public class BreadBehaviour : MonoBehaviour
             GameManager.Instance.points -= 10;
 
             Vibrator.Vibrate();
+            MenuSoundManager.Instance.PlayBread();
         }
     }
 }

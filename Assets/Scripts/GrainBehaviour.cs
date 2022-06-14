@@ -38,6 +38,7 @@ public class GrainBehaviour : MonoBehaviour
             duck.hunger += 5;
 
             GameManager.Instance.points += 20;
+            MenuSoundManager.Instance.PlayGrain();
         }
     }
 }

@@ -130,11 +130,13 @@ public class DuckBehaviour : MonoBehaviour
 
     void OnSwipeLeft()
     {
+        MenuSoundManager.Instance.PlaySwim();
         originPosition = new Vector2(Mathf.Clamp(originPosition.x - 1.5f, -1.5f, 1.5f), originPosition.y);
     }
 
     void OnSwipeRight()
     {
+        MenuSoundManager.Instance.PlaySwim();
         originPosition = new Vector2(Mathf.Clamp(originPosition.x + 1.5f, -1.5f, 1.5f), originPosition.y);
     }
 }

@@ -20,5 +20,6 @@ public class Lost : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
+        MenuSoundManager.Instance.MenuMusic();
     }
 }

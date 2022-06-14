@@ -20,6 +20,7 @@ public class Options : MonoBehaviour
 
     public void setVibrations()
     {
+        MenuSoundManager.Instance.PlaySwitch();
         if (PlayerPrefs.GetString("vibrations") == "off")
         {
             PlayerPrefs.SetString("vibrations", "on");
@@ -34,15 +35,18 @@ public class Options : MonoBehaviour
 
     public void setVolume()
     {
+        MenuSoundManager.Instance.PlaySwitch();
         if (PlayerPrefs.GetString("volume") == "off")
         {
             PlayerPrefs.SetString("volume", "on");
             volumeButtonText.text = "VOLUME: ON";
+            MenuSoundManager.Instance.Unmute();
         }
         else
         {
             PlayerPrefs.SetString("volume", "off");
             volumeButtonText.text = "VOLUME: OFF";
+            MenuSoundManager.Instance.Mute();
         }
     }
 }
