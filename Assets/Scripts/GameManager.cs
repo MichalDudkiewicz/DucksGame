@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         wonUI.GetComponent<Won>().level.text = "Lvl. " + currentLevel.ToString();
         wonUI.GetComponent<Won>().score.text = points.ToString();
+        wonUI.GetComponent<Won>().ShowStars();
         wonUI.SetActive(true);
         PlayerPrefs.SetInt("level" + (GameManager.Instance.currentLevel + 1).ToString(), 1);
     }
