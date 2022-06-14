@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public List<Sprite> unlockedSprite;
+
     public GameObject ui;
     public GameObject breadPrefab;
     public GameObject grainPrefab;
@@ -13,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject femaleDuckPrefab;
     private List<float> possiblePositions = new List<float> { -1.5f, 0, 1.5f };
     public float breadSpawnDelay = 5f;
-    private float spawnDeltaTime = 5f;
+    private float spawnDeltaTime = 1f;
 
     private List<DuckBehaviour> ducks;
     private GameObject maleDuck;
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     public int points = 0;
     public Text pointsText;
     public Text levelText;
+    public GameObject levelImage;
 
     public GameObject wonUI;
     public GameObject lostUI;
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour
         ShowUI();
         currentLevel = PlayerPrefs.GetInt("currentLevel");
         levelText.text = currentLevel.ToString();
+        levelImage.GetComponent<Image>().sprite = unlockedSprite[currentLevel - 1];
         GameEvents.current.onDuckDeath += handleDuckDeath;
 
         var random = new System.Random();

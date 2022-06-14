@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SelectLevel : MonoBehaviour
 {
     public Dictionary<int, bool> levels;
-    public Sprite unlockedSprite;
+    public List<Sprite> unlockedSprite;
 
     public List<GameObject> levelsButtons;
 
@@ -16,7 +16,7 @@ public class SelectLevel : MonoBehaviour
     {
         levels = new Dictionary<int, bool>();
         levels[1] = true;
-        levelsButtons[0].GetComponent<Image>().sprite = unlockedSprite;
+        levelsButtons[0].GetComponent<Image>().sprite = unlockedSprite[0];
         levelsButtons[0].GetComponent<Button>().onClick.AddListener(() => ButtonClicked(1));
         levelsButtons[1].GetComponent<Button>().onClick.AddListener(() => ButtonClicked(2));
         levelsButtons[2].GetComponent<Button>().onClick.AddListener(() => ButtonClicked(3));
@@ -34,7 +34,7 @@ public class SelectLevel : MonoBehaviour
 
             if (isLevelUnlocked)
             {
-                levelsButtons[i - 1].GetComponent<Image>().sprite = unlockedSprite;
+                levelsButtons[i - 1].GetComponent<Image>().sprite = unlockedSprite[i - 1];
             }
             else
             {
