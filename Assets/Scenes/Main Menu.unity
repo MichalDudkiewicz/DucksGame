@@ -2535,6 +2535,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c71cdb9fb62b7c4439279e4eb588aecc, type: 3}
   - {fileID: 21300000, guid: 244fb6aee3ebb3b4d8260bd5b3ffeeb3, type: 3}
   - {fileID: 21300000, guid: 6ca771096127e7246ac16b37869e5957, type: 3}
+  unlockedStarPrefab: {fileID: 6627895520591410986, guid: ca7e78aa90c49694b9a0505a146b9b40, type: 3}
+  lockedStarPrefab: {fileID: 2036826335330199431, guid: 1d42679e57535e54391ae38036be9eaf, type: 3}
   levelsButtons:
   - {fileID: 676720470}
   - {fileID: 731245104}
