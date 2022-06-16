@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             origin = new Vector2(origin.x, -4.2f + i * 1.4f);
         }
 
-        points -= 10000;
+        points -= 1000;
     }
 
     private void FixedUpdate()
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             Lost();
         }
 
-        if (maleDuck.GetComponent<DuckBehaviour>().hunger > 90 && femaleDuck.GetComponent<DuckBehaviour>().hunger > 90)
+        if (ducks.TrueForAll(duck => duck.hunger > 95))
         {
             Won();
         }
