@@ -25,6 +25,8 @@ public class MenuSoundManager : MonoBehaviour
 	public AudioClip grainClip;
 	public AudioClip swimClip;
 	public AudioClip deathClip;
+	public AudioClip wonClip;
+	public AudioClip lostClip;
 
 	public void Start()
     {
@@ -93,6 +95,24 @@ public class MenuSoundManager : MonoBehaviour
 		if (!muted)
 		{
 			EffectsSource.clip = deathClip;
+			EffectsSource.Play();
+		}
+	}
+
+	public void WonSound()
+	{
+		if (!muted)
+		{
+			EffectsSource.clip = wonClip;
+			EffectsSource.Play();
+		}
+	}
+
+	public void LostSound()
+	{
+		if (!muted)
+		{
+			EffectsSource.clip = lostClip;
 			EffectsSource.Play();
 		}
 	}

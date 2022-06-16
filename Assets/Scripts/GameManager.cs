@@ -132,6 +132,8 @@ public class GameManager : MonoBehaviour
         lostUI.GetComponent<Lost>().level.text = "Lvl. " + currentLevel.ToString();
         lostUI.GetComponent<Lost>().score.text = points.ToString();
         lostUI.SetActive(true);
+
+        MenuSoundManager.Instance.LostSound();
     }
 
     private void Won()
@@ -142,6 +144,8 @@ public class GameManager : MonoBehaviour
         wonUI.GetComponent<Won>().score.text = points.ToString();
         wonUI.GetComponent<Won>().ShowStars();
         wonUI.SetActive(true);
+
+        MenuSoundManager.Instance.WonSound();
         PlayerPrefs.SetInt("level" + (GameManager.Instance.currentLevel + 1).ToString(), 1);
     }
 

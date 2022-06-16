@@ -4731,6 +4731,8 @@ MonoBehaviour:
   grainClip: {fileID: 8300000, guid: e64f0c066d62bf141816d3076e07ebec, type: 3}
   swimClip: {fileID: 8300000, guid: a02d19906b35fa44ead60a1294ea62c5, type: 3}
   deathClip: {fileID: 8300000, guid: b64bb6ea1e5d2984a8a647dfcd4dba86, type: 3}
+  wonClip: {fileID: 8300000, guid: 1dedf384a4456554db70c44433062e96, type: 3}
+  lostClip: {fileID: 8300000, guid: 0dfc428bc24a43b499a34d324a6ce77a, type: 3}
 --- !u!4 &1992296546
 Transform:
   m_ObjectHideFlags: 0
