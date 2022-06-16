@@ -45,7 +45,7 @@ public class DuckBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life < 99)
+        if (life < 5)
         {
             GameEvents.current.DuckDeath(this.gameObject.GetComponent<DuckBehaviour>());
             DeathAnimation();
