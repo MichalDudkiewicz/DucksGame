@@ -16,25 +16,25 @@ public class Won : MonoBehaviour
     {
         int points = GameManager.Instance.points;
         string key = GameManager.Instance.currentLevel.ToString() + "stars";
-        if (points > 0)
+        stars[0].GetComponent<Image>().sprite = unlockedStar;
+        if (GameManager.Instance.ducks.Count > 1)
         {
-            if (points > 1000)
+            if (points > 500)
             {
-                if (points > 10000)
+                if (points > 800)
                 {
                     stars[2].GetComponent<Image>().sprite = unlockedStar;
                 }
                 stars[1].GetComponent<Image>().sprite = unlockedStar;
             }
-            stars[0].GetComponent<Image>().sprite = unlockedStar;
         }
 
-        int n = 0;
-        if (points > 0)
+        int n = 1;
+        if (GameManager.Instance.ducks.Count > 1)
         {
-            if (points > 1000)
+            if (points > 500)
             {
-                if (points > 10000)
+                if (points > 800)
                 {
                     n = 3;
                 }
@@ -42,10 +42,6 @@ public class Won : MonoBehaviour
                 {
                     n = 2;
                 }
-            }
-            else
-            {
-                n = 1;
             }
         }
         PlayerPrefs.SetInt(key, n);

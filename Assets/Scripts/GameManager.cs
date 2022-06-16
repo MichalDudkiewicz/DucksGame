@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float breadSpawnDelay = 5f;
     private float spawnDeltaTime = 1f;
 
-    private List<DuckBehaviour> ducks;
+    public List<DuckBehaviour> ducks;
     private GameObject maleDuck;
     private GameObject femaleDuck;
 
