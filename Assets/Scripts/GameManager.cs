@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
             origin = new Vector2(origin.x, -4.2f + i * 1.4f);
         }
 
-        points -= 1000;
+        points -= 300;
     }
 
     private void FixedUpdate()
