@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     private GameObject options;
     private GameObject level;
+
     private void Start()
     {
         options = GameObject.Find("Options");

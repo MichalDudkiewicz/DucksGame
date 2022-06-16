@@ -13,7 +13,6 @@ public class SelectLevel : MonoBehaviour
 
     public List<GameObject> levelsButtons;
 
-
     void OnEnable()
     {
         levels = new Dictionary<int, bool>();
