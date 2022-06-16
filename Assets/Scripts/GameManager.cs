@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public int currentLevel=1;
 
     private static GameManager instance;
+    private double probability = 0.5;
+    private double currentBreadProbability;
 
     private void Awake()
     {
@@ -55,6 +57,9 @@ public class GameManager : MonoBehaviour
         MenuSoundManager.Instance.GameMusic();
         ShowUI();
         currentLevel = PlayerPrefs.GetInt("currentLevel");
+        breadSpawnDelay -= (currentLevel) * 0.25f;
+        currentBreadProbability = probability + currentLevel * 0.05;
+        
         levelText.text = currentLevel.ToString();
         levelImage.GetComponent<Image>().sprite = unlockedSprite[currentLevel - 1];
         GameEvents.current.onDuckDeath += handleDuckDeath;
@@ -92,11 +97,11 @@ public class GameManager : MonoBehaviour
         if (spawnDeltaTime <= 0)
         {
             var random = new System.Random();
-            int rInt = random.Next(0, 2);
+            double r = random.NextDouble();
             int index = random.Next(possiblePositions.Count);
             Vector3 startBreadPosition = new Vector3(possiblePositions[index], 5f, 0);
             
-            if (rInt > 0)
+            if (r < currentBreadProbability)
             {
                 BreadBehaviour bread = Instantiate(breadPrefab, startBreadPosition, Quaternion.identity).GetComponent<BreadBehaviour>();
                 bread.breadSpeed *= currentLevel;

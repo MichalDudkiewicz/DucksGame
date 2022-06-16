@@ -9,6 +9,8 @@ public class GrainBehaviour : MonoBehaviour
     public List<Sprite> sprites;
     private SpriteRenderer spriteRenderer;
 
+    int prize;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class GrainBehaviour : MonoBehaviour
         System.Random r = new System.Random();
         int rInt = r.Next(0, sprites.Count);
         spriteRenderer.sprite = sprites[rInt];
+
+        prize = 16 - GameManager.Instance.currentLevel;
     }
 
     // Update is called once per frame
@@ -35,7 +39,7 @@ public class GrainBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
             DuckBehaviour duck = collision.gameObject.GetComponent<DuckBehaviour>();
-            duck.hunger += 15;
+            duck.hunger += prize;
 
             GameManager.Instance.points += 40;
             MenuSoundManager.Instance.PlayGrain();

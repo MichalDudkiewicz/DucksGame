@@ -22,7 +22,7 @@ public class DuckBehaviour : MonoBehaviour
     public int life = 100;
     public int hunger = 10;
     private float time = 0.0f;
-    public float interpolationPeriod = 10f;
+    public float interpolationPeriod;
 
     private GameObject stomach;
     private GameObject heart;
@@ -37,6 +37,7 @@ public class DuckBehaviour : MonoBehaviour
 
         heart = gameObject.transform.GetChild(0).gameObject;
         stomach = gameObject.transform.GetChild(1).gameObject;
+        interpolationPeriod = 15.0f - GameManager.Instance.currentLevel;
     }
 
     // Update is called once per frame
