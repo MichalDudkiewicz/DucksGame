@@ -35,10 +35,10 @@ public class BreadBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
             DuckBehaviour duck = collision.gameObject.GetComponent<DuckBehaviour>();
-            duck.life -= 10;
-            duck.hunger += 5;
+            duck.life -= 15;
+            duck.hunger += 10;
 
-            GameManager.Instance.points -= 10;
+            GameManager.Instance.points -= 20;
 
             Vibrator.Vibrate();
             MenuSoundManager.Instance.PlayBread();

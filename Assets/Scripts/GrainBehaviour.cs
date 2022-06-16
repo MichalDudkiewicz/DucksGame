@@ -35,9 +35,9 @@ public class GrainBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
             DuckBehaviour duck = collision.gameObject.GetComponent<DuckBehaviour>();
-            duck.hunger += 5;
+            duck.hunger += 15;
 
-            GameManager.Instance.points += 20;
+            GameManager.Instance.points += 40;
             MenuSoundManager.Instance.PlayGrain();
         }
     }
