@@ -40,7 +40,6 @@ public class BreadBehaviour : MonoBehaviour
             Destroy(this.gameObject);
             DuckBehaviour duck = collision.gameObject.GetComponent<DuckBehaviour>();
             duck.life -= penalty;
-            duck.hunger += 10;
 
             GameManager.Instance.points -= 20;
 
