@@ -122,8 +122,7 @@ public class GameManager : MonoBehaviour
         {
             Lost();
         }
-
-        if (ducks.TrueForAll(duck => duck.hunger > 95))
+        else if (ducks.TrueForAll(duck => duck.hunger > 95))
         {
             Won();
         }
@@ -133,7 +132,7 @@ public class GameManager : MonoBehaviour
     {
         HideUI();
         Time.timeScale = 0f;
-        Debug.Log(currentLevel);
+
         lostUI.GetComponent<Lost>().level.text = "Lvl. " + currentLevel.ToString();
         lostUI.GetComponent<Lost>().score.text = points.ToString();
         lostUI.SetActive(true);
@@ -145,6 +144,7 @@ public class GameManager : MonoBehaviour
     {
         HideUI();
         Time.timeScale = 0f;
+
         wonUI.GetComponent<Won>().level.text = "Lvl. " + currentLevel.ToString();
         wonUI.GetComponent<Won>().score.text = points.ToString();
         wonUI.GetComponent<Won>().ShowStars();
