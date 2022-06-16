@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  originPosition: {x: 0, y: 0}
   detectSwipeOnlyAfterRelease: 1
   SWIPE_THRESHOLD: 20
   hearts:
@@ -148,6 +149,7 @@ MonoBehaviour:
   life: 100
   hunger: 10
   interpolationPeriod: 10
+  deathParticles: {fileID: 8736045110390448410, guid: 5c55d5bae33c8f2449d2ab1b60a18ea6, type: 3}
 --- !u!61 &4188939487270241267
 BoxCollider2D:
   m_ObjectHideFlags: 0

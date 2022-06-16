@@ -27,6 +27,8 @@ public class DuckBehaviour : MonoBehaviour
     private GameObject stomach;
     private GameObject heart;
 
+    public GameObject deathParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,9 +45,10 @@ public class DuckBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life < 10)
+        if (life < 99)
         {
             GameEvents.current.DuckDeath(this.gameObject.GetComponent<DuckBehaviour>());
+            DeathAnimation();
             Destroy(this.gameObject);
         }
         life = Mathf.Clamp(life, 10, 100);
@@ -96,11 +99,6 @@ public class DuckBehaviour : MonoBehaviour
         transform.position = Vector2.Lerp(transform.position, originPosition, 0.2f);
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
 
     void checkSwipe()
     {
@@ -137,5 +135,10 @@ public class DuckBehaviour : MonoBehaviour
     void OnSwipeRight()
     {
         originPosition = new Vector2(Mathf.Clamp(originPosition.x + 1.5f, -1.5f, 1.5f), originPosition.y);
+    }
+
+    private void DeathAnimation()
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
     }
 }
