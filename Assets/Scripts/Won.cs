@@ -19,9 +19,9 @@ public class Won : MonoBehaviour
         stars[0].GetComponent<Image>().sprite = unlockedStar;
         if (GameManager.Instance.ducks.Count > 1)
         {
-            if (points > 500)
+            if (points > 250)
             {
-                if (points > 800)
+                if (points > 500)
                 {
                     stars[2].GetComponent<Image>().sprite = unlockedStar;
                 }
@@ -32,9 +32,9 @@ public class Won : MonoBehaviour
         int n = 1;
         if (GameManager.Instance.ducks.Count > 1)
         {
-            if (points > 500)
+            if (points > 250)
             {
-                if (points > 800)
+                if (points > 500)
                 {
                     n = 3;
                 }
