@@ -88,4 +88,10 @@ public class SelectLevel : MonoBehaviour
         PlayerPrefs.SetInt("currentLevel", buttonNo);
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void GoBackMainMenu()
+    {
+        MenuSoundManager.Instance.PlayBtn();
+        SceneManager.LoadScene("Main Menu");
+    }
 }

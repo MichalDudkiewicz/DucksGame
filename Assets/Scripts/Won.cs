@@ -51,7 +51,7 @@ public class Won : MonoBehaviour
     {
         PlayerPrefs.SetInt("currentLevel", GameManager.Instance.currentLevel + 1);
         GameManager.Instance.ShowUI();
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Select Level");
         MenuSoundManager.Instance.MenuMusic();
 
         Time.timeScale = 1f;
