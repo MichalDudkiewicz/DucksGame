@@ -15,6 +15,18 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        MenuSoundManager.Instance.PlayBtn();
         SceneManager.LoadScene("Select Level");
+    }
+
+    public void Options()
+    {
+        MenuSoundManager.Instance.PlayBtn();
+        options.SetActive(true);
+    }
+
+    public void ButtonSound()
+    {
+        MenuSoundManager.Instance.PlayBtn();
     }
 }

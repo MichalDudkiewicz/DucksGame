@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        MenuSoundManager.Instance.PlayBtn();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Unpause()
     {
+        MenuSoundManager.Instance.PlayBtn();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -24,14 +26,21 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        MenuSoundManager.Instance.PlayBtn();
         SceneManager.LoadScene("SampleScene");
         Unpause();
     }
 
     public void Exit()
     {
+        MenuSoundManager.Instance.PlayBtn();
         SceneManager.LoadScene("Main Menu");
         Unpause();
         MenuSoundManager.Instance.MenuMusic();
+    }
+
+    public void PlayBtn()
+    {
+        MenuSoundManager.Instance.PlayBtn();
     }
 }
